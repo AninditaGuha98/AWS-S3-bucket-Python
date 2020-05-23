@@ -42,8 +42,4 @@ s3=boto3.client('s3')   #Linking with the client type
 
 #Move File from 1st bucket to 2nd bucket
 
-copy_file={
-    'Bucket':'anindita-bucket',
-    'Key':'anindita.txt'
-}
-s3.meta.client.copy(copy_file,'anindita-second-bucket','anindita.txt')
+
