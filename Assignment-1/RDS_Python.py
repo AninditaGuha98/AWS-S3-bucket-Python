@@ -55,6 +55,7 @@ def database_insert(cursor):
     password=input("Please enter the password: ")
     encryptedpass=passwordEncryption(password)
     insert_data = ("INSERT into login (userId,password) values(%s,%s)")
+    print("Encrypted password: ",encryptedpass)
     cursor.execute(insert_data, (id, encryptedpass))
     databaseRetrieve(cursor)
 
