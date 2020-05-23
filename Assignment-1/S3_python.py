@@ -2,7 +2,7 @@ author="Anindita"
 
 import boto3
 s3=boto3.client('s3')   #Linking with the client type
-s3.upload_file("anindita.txt", "anindita-bucket","anindita.txt")    #Uploading file to s3 bucket, format: Filepath, bucket-name, filename
+s3.upload_file("anindita.txt", "anindita-bucket","anindita.txt")    #Uploading file to s3 bucket, format: Filename/path in local, bucket-name, filename in bucket
 s3.create_bucket(Bucket='anindita-third-bucket')   #Creating second bucket
 
 
