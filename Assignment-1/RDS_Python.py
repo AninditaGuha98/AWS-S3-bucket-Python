@@ -69,6 +69,7 @@ def databaseRetrieve(cursor):
     decryptedpass=passwordDecryption(results)
     print("Decrypted password: ",decryptedpass)
 
+#calling the function
 send_fetchS3()
 conn.commit()
 conn.close()

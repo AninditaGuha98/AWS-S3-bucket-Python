@@ -2,16 +2,16 @@ author="Anindita"
 
 import boto3
 s3=boto3.client('s3') #Linking with the client type
+
 def CreateBucket():
     s3.upload_file("anindita.txt", "anindita-bucket","anindita.txt")    #Uploading file to s3 bucket, format: Filename/path in local, bucket-name, filename in bucket
-    s3.create_bucket(Bucket='anindita-third-bucket')   #Creating second bucket
+    s3.create_bucket(Bucket='anindita-second-bucket')   #Creating second bucket
     ChangePublicPersmission()
-
 
 def ChangePublicPersmission():
     #Changing public access permissions
     client=boto3.client('s3')
-    response = client.put_public_access_block(
+    client.put_public_access_block(
     Bucket='anindita-second-bucket',
         PublicAccessBlockConfiguration={
             'BlockPublicAcls': True,
@@ -43,6 +43,7 @@ def ChangeACLPermissions():
         },
         Bucket='anindita-second-bucket'
     )
+
     MoveFile()
 
 def MoveFile():
@@ -51,4 +52,5 @@ def MoveFile():
     s3_resource.Object('anindita-second-bucket','anindita.txt').copy_from(CopySource='anindita-bucket'+'/'+'anindita.txt')
     s3_resource.Object('anindita-bucket','anindita.txt').delete()
 
+#Calling the function
 CreateBucket()
