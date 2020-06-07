@@ -1,5 +1,5 @@
 <h1>Serverless-Data-Processing</h1>
-  <p>This repository contains oen of the assignment for course "Serverless Data Processing" which contains the following:</p>
+  
   <ul>
     <li>Connection of S3 bucket using python AWS SDK boto3.</li>
     <li>Sending file to bucket.</li>
